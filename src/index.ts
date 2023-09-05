@@ -3,12 +3,20 @@
 
 // console.log('newList: ', newList);
 
-import fs from 'fs';
+// import fs from 'fs';
 
-const file = fs.readFileSync('lines', 'utf8');
+// const file = fs.readFileSync('lines', 'utf8');
 
-const lines = file.split('\n');
+// const lines = file.split('\n');
 
-lines.forEach((line: string) => {
-  console.log(line);
-});
+// lines.forEach((line: string) => {
+//   console.log(line);
+// });
+
+function isNumber(value: number | undefined) {
+  return value === undefined ? 0 : value * 5;
+}
+
+
+console.log(isNumber(5));
+console.log(isNumber(undefined));
