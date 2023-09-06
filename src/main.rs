@@ -1,15 +1,26 @@
-fn multiple(num: Option<usize>) -> Option<usize> {
-  let num = num?;
-  // return num.unwrap_or(0) * 5;
-  if num > 0 {
-    return Some(num * 5)
-  } else {
-    return None
-  }
-}
+// fn multiply(nums: Vec<usize>, index: usize) -> usize {
+//   return nums.get(index).unwrap_or(&index) * 5;
+// }
+
+// fn main() {
+
+//   let vec = vec![1, 2, 4, 5, 6];
+
+//   println!("{}", multiply(vec, 0))
+
+// }
+
+// Rust Error Libraries
+// thiserror
+// anyhow - for applications
 
 fn main() {
-  let num = multiple(Some(40));
+  let file_name = std::env::args().nth(1)
+      .expect("the file name to be passed in");
 
-  println!("{}", num.unwrap())
+  let file = std::fs::read_to_string(file_name)
+      .expect("unable to read file contents");
+
+  file.lines().for_each(|line| println!("{}", line));
+  
 }
