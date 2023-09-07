@@ -1,33 +1,26 @@
+// fn multiply(nums: Vec<usize>, index: usize) -> usize {
+//   return nums.get(index).unwrap_or(&index) * 5;
+// }
+
+// fn main() {
+
+//   let vec = vec![1, 2, 4, 5, 6];
+
+//   println!("{}", multiply(vec, 0))
+
+// }
+
+// Rust Error Libraries
+// thiserror
+// anyhow - for applications
+
 fn main() {
+  let file_name = std::env::args().nth(1)
+      .expect("the file name to be passed in");
 
-    // let data = vec![1, 2, 3];
+  let file = std::fs::read_to_string(file_name)
+      .expect("unable to read file contents");
 
-    // let mut list = data.iter().map(|x| x + 1);
-
-    // // Iterator is another kind of data structure that can
-    // // iterate over a collection
-
-    // let mut new_vector = vec![];
-
-    // while let Some(x) = list.next() {
-    //   new_vector.push(x);
-    // }
-
-
-    // let foo: HashMap<&str, usize> = vec!["this", "is", "super", "cool"]
-    // .into_iter()
-    // .enumerate()
-    // .map(|(idx, item)| (item, idx))
-    // .collect();
-
-
-
-    // println!("{:?}", foo);
-
-    let file = std::fs::read_to_string("lines").unwrap();
-
-    file.lines()
-        .enumerate()
-        .filter(|(idx, _)|  idx % 2 == 0)
-        .for_each(|(_, line)| println!("{}", line));
+  file.lines().for_each(|line| println!("{}", line));
+  
 }
