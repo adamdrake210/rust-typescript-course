@@ -1,6 +1,6 @@
 mod shapes;
 
-use crate::shapes::{rect::Rect, circle::Circle, area::Area};
+use crate::shapes::{rect::Rect, circle::Circle};
 
 
 fn main() {
