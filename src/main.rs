@@ -10,6 +10,10 @@ fn main() {
     y: 0.0,
     radius: 10.0
   };
-  println!("{}", rect);
   println!("{}", circ);
+  
+  for point in &rect {
+    
+  }
+  println!("{}", rect);
 }
